@@ -11,6 +11,7 @@ import android.widget.Button;
 
 
 public class MainFragment extends Fragment {
+    private View rootView;
 
 
     public MainFragment() {
@@ -21,22 +22,22 @@ public class MainFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_main, container, false);
-        Button pressMe = (Button) view.findViewById(R.id.press_me);
-        pressMe.setOnClickListener(new View.OnClickListener() {
+        rootView = inflater.inflate(R.layout.fragment_main, container, false);
+
+        Button button01 = rootView.findViewById(R.id.button01);
+        button01.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                MainFragment mainFragment = new MainFragment();
+            public void onClick(View view) {
+                DisplayFragment displayFragment = new DisplayFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.main_container, mainFragment);
-                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.replace(R.id.main_container, displayFragment).addToBackStack("added to back stack");
                 fragmentTransaction.commit();
-
 
             }
         });
-        return view;
+
+        return rootView;
     }
 
 

@@ -5,10 +5,10 @@
     tools:context="nyc.c4q.mustafizurmatin.midunitassessment.MainFragment">
 
     <Button
-        android:id="@+id/press_me"
+        android:id="@+id/button01"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="press me"/>
+        android:text="press me"
+        android:layout_gravity="center"/>
 
 </FrameLayout>

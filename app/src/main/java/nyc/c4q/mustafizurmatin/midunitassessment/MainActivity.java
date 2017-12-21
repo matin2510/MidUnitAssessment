@@ -12,11 +12,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         MainFragment mainFragment = new MainFragment();
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.main_container, mainFragment);
-        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
+
     }
 }
